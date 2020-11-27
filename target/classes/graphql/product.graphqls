@@ -1,0 +1,20 @@
+type ProductDto {
+    code: String!,
+    name: String,
+    total: Int
+}
+
+input ProductInput {
+    code: String!,
+    name: String,
+    total: Int
+}
+
+type Query {
+    findAllProduct: [ProductDto],
+    findByProduct(code: String): ProductDto
+}
+
+type Mutation{
+    insertProduct(dto: ProductInput): [ProductDto]
+}
